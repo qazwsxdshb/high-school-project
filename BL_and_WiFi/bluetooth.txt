@@ -1,0 +1,91 @@
+宣告藍芽物件的名稱及定義步進馬達每轉的步數
+
+#include <BluetoothSerial.h>
+#include <Stepper.h>
+
+BluetoothSerial SerialBT; SerialBT
+const int steps_per_rev = 2048;
+
+
+
+定義ESP32和步進馬達連接的輸入引腳 GPIO引腳26、25、33、32分別接到IN1、IN2、IN3、IN4
+
+#define IN1 26
+#define IN2 25
+#define IN3 33
+#define IN4 32
+
+
+
+
+創建一個名為MOTOR的STEPPER函式庫實例 每轉步數和各個電機輸入引腳作為參數傳遞
+Stepper motor(steps_per_rev, IN1, IN3, IN2, IN4);
+
+將步進電機速度設置為每分鐘15轉，再以115200的BAUD率建立開發板之間的連接，且開啟藍芽功能
+
+void setup() {
+  motor.setSpeed(15);
+  Serial.begin(115200);
+  SerialBT.begin("ESP32_BT");  
+}
+
+如果藍芽訊號收到了客戶端送來的字為1，步進馬達順時針旋轉四圈，收到的字串為2，逆時針旋轉四圈，收到的字串為3，停止旋轉
+
+
+
+	void loop() {
+  
+  if(SerialBT.available()){Serial.println("");}
+  while(SerialBT.available())
+  {
+    char btdata=SerialBT.read();
+    if (btdata=='1'){
+          for(int i=0;i<4;i++){
+            motor.step(steps_per_rev);
+            if (SerialBT.available()){break;}
+          }
+    }
+    if (btdata=='2'){
+      for(int i=0;i<3;i++){
+            motor.step(-steps_per_rev);
+            if (SerialBT.available()){break;}
+          }  
+      }
+    if (btdata=='3'){
+       Serial.println("stop");  
+    }
+    Serial.print(btdata);
+  }  
+  delay(500);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

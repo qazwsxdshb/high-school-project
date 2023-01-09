@@ -1,0 +1,90 @@
+無線網路基地台的SSID、密碼
+#include <WiFi.h>                
+#include <WebServer.h>
+const char *ssid = "ID";       
+const char *password = "Password";
+
+
+
+定義LED接腳為 GPIO 2，建立伺服器物件，設定監聽 80 號埠
+
+const byte LED = 2;           
+WebServer server(80);
+
+
+處理程序：回覆根目錄請求	
+
+
+void handleRoot() {             
+String HTML = "<a style='font-size:72px' href=\"/on\">開啟電燈</a>";  
+  HTML += "<BR>";
+  HTML += "<a style='font-size:72px' href=\"/off\">關閉電燈</a>";
+
+
+送出訊息到客戶端
+
+server.send(200, "text/html; charset=UTF-8", HTML ); 
+}
+
+
+未找到檔案時
+void handleNotFound() {     
+  server.send(404, "text/html; charset=UTF-8", "找不到檔案");
+}
+
+
+處理程序：點亮電燈和熄滅電燈
+void handleLedOn() {         
+  digitalWrite(LED, HIGH);
+  server.send(200, "text/html; charset=UTF-8", "<p style='font-size:72px'>電燈已開啟</p><BR>\
+              <a style='font-size:72px' href=/off>關閉電燈</a>");
+}
+void handleLedOff() {       
+  digitalWrite(LED, LOW);
+  server.send(200, " text/html; charset=UTF-8", "<p style='font-size:72px'>電燈已開啟</p><BR>\
+              <a style='font-size:72px' href=/on>開啟電燈</a>");
+}
+
+
+以9600的BAUD率建立開發板之間的連接設定，並以LED為輸出腳
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED, OUTPUT);
+  
+}
+
+連線到無線基地台，持續嘗試連線至成功為止
+
+
+WiFi.begin(ssid, password);         
+  while (WiFi.status() != WL_CONNECTED) {  
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.print("已連線到基地台：");
+  Serial.println(ssid);
+  Serial.print("基地台配發給我的IP位址：");
+
+
+
+列出基地台配發給我的位址
+Serial.println(WiFi.localIP());  
+
+登錄處理程序：根目錄  
+server.on("/", handleRoot);       
+server.onNotFound(handleNotFound); 
+  server.on("/on", handleLedOn);     
+  server.on("/off", handleLedOff);   
+
+啟動伺服器物件
+
+server.begin();                    
+  Serial.println("HTTP 伺服器已啟動");
+} 
+
+啟動客戶端請求處理程序
+
+void loop() {
+  server.handleClient();            
+} 
