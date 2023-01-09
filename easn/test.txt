@@ -1,0 +1,97 @@
+Input driver version is 1.0.1
+Input device ID: bus 0x19 vendor 0x1 product 0x1 version 0x100
+Input device name: "gpio_ir_recv"
+Supported events:
+  Event type 0 (EV_SYN)
+  Event type 1 (EV_KEY)
+    Event code 28 (KEY_ENTER)
+    Event code 103 (KEY_UP)
+    Event code 105 (KEY_LEFT)
+    Event code 106 (KEY_RIGHT)
+    Event code 108 (KEY_DOWN)
+    Event code 111 (KEY_DELETE)
+    Event code 113 (KEY_MUTE)
+    Event code 114 (KEY_VOLUMEDOWN)
+    Event code 115 (KEY_VOLUMEUP)
+    Event code 119 (KEY_PAUSE)
+    Event code 128 (KEY_STOP)
+    Event code 142 (KEY_SLEEP)
+    Event code 161 (KEY_EJECTCD)
+    Event code 164 (KEY_PLAYPAUSE)
+    Event code 167 (KEY_RECORD)
+    Event code 168 (KEY_REWIND)
+    Event code 174 (KEY_EXIT)
+    Event code 207 (KEY_PLAY)
+    Event code 208 (KEY_FASTFORWARD)
+    Event code 210 (KEY_PRINT)
+    Event code 212 (KEY_CAMERA)
+    Event code 224 (KEY_BRIGHTNESSDOWN)
+    Event code 225 (KEY_BRIGHTNESSUP)
+    Event code 226 (KEY_MEDIA)
+    Event code 352 (KEY_OK)
+    Event code 356 (KEY_POWER2)
+    Event code 358 (KEY_INFO)
+    Event code 365 (KEY_EPG)
+    Event code 366 (KEY_PVR)
+    Event code 368 (KEY_LANGUAGE)
+    Event code 369 (KEY_TITLE)
+    Event code 370 (KEY_SUBTITLE)
+    Event code 372 (KEY_ZOOM)
+    Event code 373 (KEY_MODE)
+    Event code 377 (KEY_TV)
+    Event code 385 (KEY_RADIO)
+    Event code 386 (KEY_TUNER)
+    Event code 387 (KEY_PLAYER)
+    Event code 389 (KEY_DVD)
+    Event code 392 (KEY_AUDIO)
+    Event code 393 (KEY_VIDEO)
+    Event code 398 (KEY_RED)
+    Event code 399 (KEY_GREEN)
+    Event code 400 (KEY_YELLOW)
+    Event code 401 (KEY_BLUE)
+    Event code 402 (KEY_CHANNELUP)
+    Event code 403 (KEY_CHANNELDOWN)
+    Event code 407 (KEY_NEXT)
+    Event code 412 (KEY_PREVIOUS)
+    Event code 425 (KEY_PRESENTATION)
+    Event code 430 (KEY_MESSENGER)
+    Event code 512 (KEY_NUMERIC_0)
+    Event code 513 (KEY_NUMERIC_1)
+    Event code 514 (KEY_NUMERIC_2)
+    Event code 515 (KEY_NUMERIC_3)
+    Event code 516 (KEY_NUMERIC_4)
+    Event code 517 (KEY_NUMERIC_5)
+    Event code 518 (KEY_NUMERIC_6)
+    Event code 519 (KEY_NUMERIC_7)
+    Event code 520 (KEY_NUMERIC_8)
+    Event code 521 (KEY_NUMERIC_9)
+    Event code 522 (KEY_NUMERIC_STAR)
+    Event code 523 (KEY_NUMERIC_POUND)
+  Event type 2 (EV_REL)
+    Event code 0 (REL_X)
+    Event code 1 (REL_Y)
+  Event type 4 (EV_MSC)
+    Event code 4 (MSC_SCAN)
+Key repeat handling:
+  Repeat type 20 (EV_REP)
+    Repeat code 0 (REP_DELAY)
+      Value    500
+    Repeat code 1 (REP_PERIOD)
+      Value    125
+Properties:
+  Property type 5 (INPUT_PROP_POINTING_STICK)
+Testing ... (interrupt to exit)
+Event: time 1671968081.730362, type 4 (EV_MSC), code 4 (MSC_SCAN), value 5f00
+Event: time 1671968081.730362, -------------- SYN_REPORT ------------
+Event: time 1671968082.180353, type 4 (EV_MSC), code 4 (MSC_SCAN), value 5f00
+Event: time 1671968082.180353, -------------- SYN_REPORT ------------
+Event: time 1671968082.640352, type 4 (EV_MSC), code 4 (MSC_SCAN), value 5f00
+Event: time 1671968082.640352, -------------- SYN_REPORT ------------
+Event: time 1671968083.170352, type 4 (EV_MSC), code 4 (MSC_SCAN), value 5f00
+Event: time 1671968083.170352, -------------- SYN_REPORT ------------
+Event: time 1671968083.670348, type 4 (EV_MSC), code 4 (MSC_SCAN), value 5f00
+Event: time 1671968083.670348, -------------- SYN_REPORT ------------
+Event: time 1671968084.090358, type 4 (EV_MSC), code 4 (MSC_SCAN), value 5f00
+Event: time 1671968084.090358, -------------- SYN_REPORT ------------
+Event: time 1671968084.560351, type 4 (EV_MSC), code 4 (MSC_SCAN), value 5f00
+Event: time 1671968084.560351, -------------- SYN_REPORT ------------
