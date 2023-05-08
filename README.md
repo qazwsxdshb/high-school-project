@@ -2,4 +2,6 @@
 # 關鍵詞:IoT、遠端控制、語音辨識
 
 
-Uploading Untitled.mp4..
+
+https://user-images.githubusercontent.com/73778434/236825191-f8b62c44-f3ba-4b27-8626-2c372488c17b.mp4
+
