@@ -5,3 +5,4 @@
 
 https://user-images.githubusercontent.com/73778434/236825191-f8b62c44-f3ba-4b27-8626-2c372488c17b.mp4
 
+<img width="492" alt="picture" src="https://github.com/qazwsxdshb/high-school-project/assets/73778434/4fe10f93-3698-471e-90b9-f7c340c26647">
